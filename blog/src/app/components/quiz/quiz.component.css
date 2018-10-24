@@ -1,0 +1,12 @@
+.quizMain {
+  visibility: visible;
+  width: 50%;
+  margin: auto;
+}
+
+.quizSummary {
+  visibility: hidden;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
