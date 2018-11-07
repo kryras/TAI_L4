@@ -1,17 +1,3 @@
-<ul class="nav navbar-nav">
-  <li class="nav-item">
-    <a class="nav-link" href="index.html"><h1>Strona główna</h1></a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Blog</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="quiz.html">Quiz</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="kontakt.html">Kontakt</a>
-  </li>
-</ul>
 <div class="container-fluid content">
   <form>
     <fieldset>
@@ -32,8 +18,8 @@
                placeholder="Podaj email">
       </div>
       <label>Płeć:</label>
-      <div class="form-group">
-        <label class="radio-inline"><input type="radio" name="optradio">Mężczyzna</label>
+      <div class="form-group" >
+        <label class="radio-inline"><input type="radio" name="optradio" required>Mężczyzna</label>
         <label class="radio-inline"><input type="radio" name="optradio">Kobieta</label>
       </div>
       <div class="form-group">
@@ -41,7 +27,7 @@
         <textarea class="form-control" id="descriptionInput" required></textarea>
       </div>
       <div class="form-group">
-        <label for="ageInput">Wiek:</label>
+        <label for="ageInput">Wiek:</label><br>
         <input type="number" id="ageInput" min="1" max="200">
       </div>
       <div class="form-group">

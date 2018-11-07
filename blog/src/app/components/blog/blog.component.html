@@ -1,0 +1,15 @@
+<div class="container">
+  <ul>
+    <li *ngFor="let entry of blogEntry">
+      <br>
+      <app-blog-item
+        [imageUrl]="entry.imgUrl"
+        [text]="entry.entryText | summary:50"
+        (click)="showBlogEntry(entry.imgUrl, entry.entryText, blogEntry.indexOf(entry))">
+      </app-blog-item>
+      <br>
+    </li>
+  </ul>
+</div>
+
+

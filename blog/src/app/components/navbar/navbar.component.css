@@ -1,0 +1,22 @@
+h1 {
+  font-size: 18px;
+  margin: auto;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  width: 100%;
+  background-color: black;
+}
+
+li {
+  display: inline-block;
+  /*padding: 10px 20px;*/
+  color: white;
+  height: 100%;
+}
+
+.list-group-item {
+  color: black;
+}
