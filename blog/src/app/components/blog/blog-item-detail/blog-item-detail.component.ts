@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BlogDataService} from "../../../blog-data.service";
+import {BlogDataService} from "../../../services/blog-data.service";
+
 
 @Component({
   selector: 'app-blog-item-detail',

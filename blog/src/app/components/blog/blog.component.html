@@ -1,13 +1,17 @@
 <div class="container">
+  <div class="flex-container">
+    <div class="input-group mb-3 searchBar">
+      <input type="text" [(ngModel)]="filterText" (ngModelChange)="setQuery()" class="form-control"
+             placeholder="Wpisz szukaną frazę..." id="search" type="search">
+    </div>
+  </div>
   <ul>
-    <li *ngFor="let entry of blogEntry">
-      <br>
+    <li *ngFor="let entry of items | slice:0:10 | filter:filterText">
       <app-blog-item
-        [imageUrl]="entry.imgUrl"
-        [text]="entry.entryText | summary:50"
-        (click)="showBlogEntry(entry.imgUrl, entry.entryText, blogEntry.indexOf(entry))">
+        [imageUrl]="entry.url"
+        [text]="entry.id + entry.title | summary:50"
+        (click)="showBlogEntry(entry.url, entry.title, entry.id)">
       </app-blog-item>
-      <br>
     </li>
   </ul>
 </div>
