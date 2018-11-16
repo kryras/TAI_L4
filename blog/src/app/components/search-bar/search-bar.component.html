@@ -1,0 +1,4 @@
+<div class="input-group mb-3 searchBar">
+  <input [(ngModel)]="filterText" (ngModelChange)="sendFilter($event)" class="form-control"
+         placeholder="Wpisz szukaną frazę..." id="search" type="search" appTextFormat>
+</div>

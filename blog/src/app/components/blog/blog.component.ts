@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {DataService} from "../../services/data.service";
 import {BlogDataService} from "../../services/blog-data.service";
@@ -11,7 +11,7 @@ import {BlogDataService} from "../../services/blog-data.service";
 export class BlogComponent implements OnInit {
 
   items: any;
-  filterText: string;
+  @Input('filterText') filterText: string;
 
   constructor(private dataService: DataService, private blogData: BlogDataService, private router: Router, private route: ActivatedRoute) {
   }
