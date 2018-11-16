@@ -8,16 +8,6 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class ContactComponent implements OnInit {
 
-  // person = {
-  //   name: '',
-  //   surname: '',
-  //   email: '',
-  //   sex: '',
-  //   description: '',
-  //   age: '',
-  //
-  // };
-
   form = new FormGroup({
     name: new FormControl('', [Validators.required]),
     surname: new FormControl('', [Validators.required]),
