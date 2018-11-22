@@ -2,9 +2,9 @@
   <ul>
     <li *ngFor="let entry of items | slice:0:10 | filter:filterText">
       <app-blog-item
-        [imageUrl]="entry.url"
-        [text]="entry.id + entry.title | summary:50"
-        (click)="showBlogEntry(entry.url, entry.title, entry.id)">
+        [imageUrl]="entry.imgUrl"
+        [text]="entry.id + entry.entryText | summary:50"
+        (click)="showBlogEntry(entry.url, entry.entryText, entry.id)">
       </app-blog-item>
     </li>
   </ul>

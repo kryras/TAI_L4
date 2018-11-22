@@ -260,7 +260,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n  <app-search-bar (name)=\"getName($event)\"></app-search-bar>\n  <app-blog [filterText]=\"filterText\"></app-blog>\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\r\n  <app-search-bar (name)=\"getName($event)\"></app-search-bar>\r\n  <app-blog [filterText]=\"filterText\"></app-blog>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -326,7 +326,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-blog-item-image imageUrl={{imageUrl}}></app-blog-item-image>\n<app-blog-item-text text=\"{{text}}\"></app-blog-item-text>\n"
+module.exports = "  <app-blog-item-image imageUrl={{imageUrl}}></app-blog-item-image>\r\n<app-blog-item-text text=\"{{text}}\"></app-blog-item-text>\r\n"
 
 /***/ }),
 
@@ -462,7 +462,7 @@ module.exports = "p {\r\n  margin-bottom: 0px;\r\n}\r\n\r\n/*# sourceMappingURL=
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div><p>{{text}}</p></div>\n"
+module.exports = "<div><p>{{text}}</p></div>\r\n"
 
 /***/ }),
 
@@ -529,7 +529,7 @@ module.exports = ".blogItem {\r\n  background: #ced4da1a;\r\n  border: 1px solid
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"blogItem\">\n  <app-blog-item-image imageUrl={{imageUrl}}></app-blog-item-image>\n  <app-blog-item-text text=\"{{text}}\"></app-blog-item-text>\n</div>\n\n"
+module.exports = "<div class=\"blogItem\">\r\n  <app-blog-item-image imageUrl={{imageUrl}}></app-blog-item-image>\r\n  <app-blog-item-text text=\"{{text}}\"></app-blog-item-text>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -600,7 +600,7 @@ module.exports = "ul {\r\n  list-style: none;\r\n  padding-left: 0px;\r\n}\r\n\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"\">\n  <ul>\n    <li *ngFor=\"let entry of items | slice:0:10 | filter:filterText\">\n      <app-blog-item\n        [imageUrl]=\"entry.url\"\n        [text]=\"entry.id + entry.title | summary:50\"\n        (click)=\"showBlogEntry(entry.url, entry.title, entry.id)\">\n      </app-blog-item>\n    </li>\n  </ul>\n</div>\n\n\n"
+module.exports = "<div class=\"\">\r\n  <ul>\r\n    <li *ngFor=\"let entry of items | slice:0:10 | filter:filterText\">\r\n      <app-blog-item\r\n        [imageUrl]=\"entry.imgUrl\"\r\n        [text]=\"entry.id + entry.entryText | summary:50\"\r\n        (click)=\"showBlogEntry(entry.url, entry.entryText, entry.id)\">\r\n      </app-blog-item>\r\n    </li>\r\n  </ul>\r\n</div>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -647,55 +647,10 @@ var BlogComponent = /** @class */ (function () {
             _this.filterText = params['title'];
         });
     };
-    // blogEntry = [
-    //   {
-    //     imgUrl: 'https://angular.io/assets/images/logos/angular/shield-large.svg',
-    //     entryText: '1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae tempus nulla. Etiam quis diam eget leo congue aliquet. Duis risus est, ullamcorper ac malesuada eu, ornare fringilla ipsum. Duis facilisis rhoncus fermentum. Duis sit amet mauris ut erat pellentesque vulputate id id diam. Donec imperdiet accumsan quam non lacinia. Donec eleifend leo dolor, nec tempus tortor placerat eu. '
-    //   },
-    //   {
-    //     imgUrl: 'https://vuejs.org/images/logo.png?_sw-precache=cf23526f451784ff137f161b8fe18d5a',
-    //     entryText: '2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae tempus nulla. Etiam quis diam eget leo congue aliquet. Duis risus est, ullamcorper ac malesuada eu, ornare fringilla ipsum. Duis facilisis rhoncus fermentum. Duis sit amet mauris ut erat pellentesque vulputate id id diam. Donec imperdiet accumsan quam non lacinia. Donec eleifend leo dolor, nec tempus tortor placerat eu. '
-    //   },
-    //   {
-    //     imgUrl: 'https://www.apcurium.com/wp-content/uploads/2016/05/reactNe-300x266.png',
-    //     entryText: '3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae tempus nulla. Etiam quis diam eget leo congue aliquet. Duis risus est, ullamcorper ac malesuada eu, ornare fringilla ipsum. Duis facilisis rhoncus fermentum. Duis sit amet mauris ut erat pellentesque vulputate id id diam. Donec imperdiet accumsan quam non lacinia. Donec eleifend leo dolor, nec tempus tortor placerat eu. '
-    //   },
-    //   {
-    //     imgUrl: 'https://angular.io/assets/images/logos/angular/shield-large.svg',
-    //     entryText: '4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae tempus nulla. Etiam quis diam eget leo congue aliquet. Duis risus est, ullamcorper ac malesuada eu, ornare fringilla ipsum. Duis facilisis rhoncus fermentum. Duis sit amet mauris ut erat pellentesque vulputate id id diam. Donec imperdiet accumsan quam non lacinia. Donec eleifend leo dolor, nec tempus tortor placerat eu. '
-    //   },
-    //   {
-    //     imgUrl: 'https://vuejs.org/images/logo.png?_sw-precache=cf23526f451784ff137f161b8fe18d5a',
-    //     entryText: '5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae tempus nulla. Etiam quis diam eget leo congue aliquet. Duis risus est, ullamcorper ac malesuada eu, ornare fringilla ipsum. Duis facilisis rhoncus fermentum. Duis sit amet mauris ut erat pellentesque vulputate id id diam. Donec imperdiet accumsan quam non lacinia. Donec eleifend leo dolor, nec tempus tortor placerat eu. '
-    //   },
-    //   {
-    //     imgUrl: 'https://www.apcurium.com/wp-content/uploads/2016/05/reactNe-300x266.png',
-    //     entryText: '6 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae tempus nulla. Etiam quis diam eget leo congue aliquet. Duis risus est, ullamcorper ac malesuada eu, ornare fringilla ipsum. Duis facilisis rhoncus fermentum. Duis sit amet mauris ut erat pellentesque vulputate id id diam. Donec imperdiet accumsan quam non lacinia. Donec eleifend leo dolor, nec tempus tortor placerat eu. '
-    //   },
-    //   {
-    //     imgUrl: 'https://angular.io/assets/images/logos/angular/shield-large.svg',
-    //     entryText: '7 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae tempus nulla. Etiam quis diam eget leo congue aliquet. Duis risus est, ullamcorper ac malesuada eu, ornare fringilla ipsum. Duis facilisis rhoncus fermentum. Duis sit amet mauris ut erat pellentesque vulputate id id diam. Donec imperdiet accumsan quam non lacinia. Donec eleifend leo dolor, nec tempus tortor placerat eu. '
-    //   },
-    //   {
-    //     imgUrl: 'https://vuejs.org/images/logo.png?_sw-precache=cf23526f451784ff137f161b8fe18d5a',
-    //     entryText: '8 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae tempus nulla. Etiam quis diam eget leo congue aliquet. Duis risus est, ullamcorper ac malesuada eu, ornare fringilla ipsum. Duis facilisis rhoncus fermentum. Duis sit amet mauris ut erat pellentesque vulputate id id diam. Donec imperdiet accumsan quam non lacinia. Donec eleifend leo dolor, nec tempus tortor placerat eu. '
-    //   },
-    //   {
-    //     imgUrl: 'https://www.apcurium.com/wp-content/uploads/2016/05/reactNe-300x266.png',
-    //     entryText: '9 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae tempus nulla. Etiam quis diam eget leo congue aliquet. Duis risus est, ullamcorper ac malesuada eu, ornare fringilla ipsum. Duis facilisis rhoncus fermentum. Duis sit amet mauris ut erat pellentesque vulputate id id diam. Donec imperdiet accumsan quam non lacinia. Donec eleifend leo dolor, nec tempus tortor placerat eu. '
-    //   },
-    //   {
-    //     imgUrl: 'https://angular.io/assets/images/logos/angular/shield-large.svg',
-    //     entryText: '10 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae tempus nulla. Etiam quis diam eget leo congue aliquet. Duis risus est, ullamcorper ac malesuada eu, ornare fringilla ipsum. Duis facilisis rhoncus fermentum. Duis sit amet mauris ut erat pellentesque vulputate id id diam. Donec imperdiet accumsan quam non lacinia. Donec eleifend leo dolor, nec tempus tortor placerat eu. '
-    //   }
-    // ];
     BlogComponent.prototype.showBlogEntry = function (img, txt, id) {
         this.blogData.blogImageSource(img);
         this.blogData.blogTextSource(txt);
         this.router.navigate(['/blog/detail/', id]);
-    };
-    BlogComponent.prototype.setQuery = function () {
-        this.router.navigate(['/blog'], { queryParams: { title: this.filterText } });
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('filterText'),
@@ -734,7 +689,7 @@ module.exports = ".content {\r\n  width: 50%;\r\n  clear: both;\r\n  margin-top:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid content\">\n  <form [formGroup]=\"form\">\n    <fieldset>\n      <legend>Uzupełnij dane:</legend>\n      <div class=\"form-group\">\n        <label for=\"nameInput\">Imię:</label>\n        <input type=\"text\" formControlName=\"name\" class=\"form-control\" id=\"nameInput\"\n               placeholder=\"Podaj imie\" required>\n        <div *ngIf=\"form.get('name').touched && form.get('name').invalid\" class=\"alert alert-danger\" required>Imię jest wymagane!</div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"surnameInput\">Nazwisko:</label>\n        <input type=\"text\" formControlName=\"surname\" class=\"form-control\" id=\"surnameInput\"\n               placeholder=\"Podaj nazwisko\" required>\n        <div *ngIf=\"form.get('surname').touched && form.get('surname').invalid\" class=\"alert alert-danger\" required>Nazwisko jest wymagane!</div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"emailInput\">E-mail:</label>\n        <input type=\"email\" formControlName=\"email\" class=\"form-control\" id=\"emailInput\"\n               placeholder=\"Podaj email\" required>\n        <div *ngIf=\"form.get('email').touched && form.get('email').invalid\" class=\"alert alert-danger\" required>E-mail jest wymagany!</div>\n      </div>\n      <label>Płeć:</label>\n      <div class=\"form-group\" >\n        <label class=\"radio-inline\"><input type=\"radio\" formControlName=\"gender\" name=\"gender\" value=\"gender1\" required>Mężczyzna</label>\n        <label class=\"radio-inline\"><input type=\"radio\" formControlName=\"gender\" name=\"gender\" value=\"gender2\">Kobieta</label>\n        <div *ngIf=\"form.get('gender').invalid\" class=\"alert alert-danger\" required>Płeć jest wymagana!</div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"descriptionInput\">Opis:</label>\n        <textarea class=\"form-control\" formControlName=\"description\" id=\"descriptionInput\" required></textarea>\n        <div *ngIf=\"form.get('description').touched && form.get('description').invalid\" class=\"alert alert-danger\" required>Opis jest wymagany!</div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"ageInput\">Wiek:</label><br>\n        <input type=\"number\" formControlName=\"age\" id=\"ageInput\" min=\"1\" max=\"200\" required>\n        <div *ngIf=\"form.get('age').touched && form.get('age').invalid\" class=\"alert alert-danger\" required>Wiek jest wymagany!</div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"maritalStatusInput\">Stan cywilny</label>\n        <select class=\"form-control\" formControlName=\"maritalStatus\"  id=\"maritalStatusInput\" required>\n          <option>Panna/Kawaler</option>\n          <option>Mężatka/Żonaty</option>\n          <option>Wdowa/Wdowiec</option>\n        </select>\n      </div>\n      <input class=\"btn btn-primary\" (click)=\"reset()\" type=\"reset\" value=\"Wyczyść\">\n      <input class=\"btn btn-primary\" type=\"submit\" value=\"Wyślij\">\n    </fieldset>\n  </form>\n</div>\n"
+module.exports = "<div class=\"container-fluid content\">\r\n  <form [formGroup]=\"form\">\r\n    <fieldset>\r\n      <legend>Uzupełnij dane:</legend>\r\n      <div class=\"form-group\">\r\n        <label for=\"nameInput\">Imię:</label>\r\n        <input type=\"text\" formControlName=\"name\" class=\"form-control\" id=\"nameInput\"\r\n               placeholder=\"Podaj imie\" required>\r\n        <div *ngIf=\"form.get('name').touched && form.get('name').invalid\" class=\"alert alert-danger\" required>Imię jest wymagane!</div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"surnameInput\">Nazwisko:</label>\r\n        <input type=\"text\" formControlName=\"surname\" class=\"form-control\" id=\"surnameInput\"\r\n               placeholder=\"Podaj nazwisko\" required>\r\n        <div *ngIf=\"form.get('surname').touched && form.get('surname').invalid\" class=\"alert alert-danger\" required>Nazwisko jest wymagane!</div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"emailInput\">E-mail:</label>\r\n        <input type=\"email\" formControlName=\"email\" class=\"form-control\" id=\"emailInput\"\r\n               placeholder=\"Podaj email\" required>\r\n        <div *ngIf=\"form.get('email').touched && form.get('email').invalid\" class=\"alert alert-danger\" required>E-mail jest wymagany!</div>\r\n      </div>\r\n      <label>Płeć:</label>\r\n      <div class=\"form-group\" >\r\n        <label class=\"radio-inline\"><input type=\"radio\" formControlName=\"gender\" name=\"gender\" value=\"gender1\" required>Mężczyzna</label>\r\n        <label class=\"radio-inline\"><input type=\"radio\" formControlName=\"gender\" name=\"gender\" value=\"gender2\">Kobieta</label>\r\n        <div *ngIf=\"form.get('gender').invalid\" class=\"alert alert-danger\" required>Płeć jest wymagana!</div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"descriptionInput\">Opis:</label>\r\n        <textarea class=\"form-control\" formControlName=\"description\" id=\"descriptionInput\" required></textarea>\r\n        <div *ngIf=\"form.get('description').touched && form.get('description').invalid\" class=\"alert alert-danger\" required>Opis jest wymagany!</div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"ageInput\">Wiek:</label><br>\r\n        <input type=\"number\" formControlName=\"age\" id=\"ageInput\" min=\"1\" max=\"200\" required>\r\n        <div *ngIf=\"form.get('age').touched && form.get('age').invalid\" class=\"alert alert-danger\" required>Wiek jest wymagany!</div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"maritalStatusInput\">Stan cywilny</label>\r\n        <select class=\"form-control\" formControlName=\"maritalStatus\"  id=\"maritalStatusInput\" required>\r\n          <option>Panna/Kawaler</option>\r\n          <option>Mężatka/Żonaty</option>\r\n          <option>Wdowa/Wdowiec</option>\r\n        </select>\r\n      </div>\r\n      <input class=\"btn btn-primary\" (click)=\"reset()\" type=\"reset\" value=\"Wyczyść\">\r\n      <input class=\"btn btn-primary\" type=\"submit\" value=\"Wyślij\">\r\n    </fieldset>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -811,7 +766,7 @@ module.exports = "body {\r\n  width: 100%;\r\n}\r\n\r\ndiv {\r\n  clear: both;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>Lorem ipsum</p>\n"
+module.exports = "<p>Lorem ipsum</p>\r\n"
 
 /***/ }),
 
@@ -874,7 +829,7 @@ module.exports = "h1 {\r\n  font-size: 18px;\r\n  margin: auto;\r\n}\r\n\r\nul {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"nav\">\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/\"><h1>Strona główna</h1></a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/blog\">Blog</a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/quiz\">Quiz</a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/contact\">Kontakt</a>\n  </li>\n</ul>\n"
+module.exports = "<ul class=\"nav\">\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link\" routerLink=\"/\"><h1>Strona główna</h1></a>\r\n  </li>\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link\" routerLink=\"/blog\">Blog</a>\r\n  </li>\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link\" routerLink=\"/quiz\">Quiz</a>\r\n  </li>\r\n  <li class=\"nav-item\">\r\n    <a class=\"nav-link\" routerLink=\"/contact\">Kontakt</a>\r\n  </li>\r\n</ul>\r\n"
 
 /***/ }),
 
@@ -937,7 +892,7 @@ module.exports = ".quizMain {\r\n  visibility: visible;\r\n  width: 50%;\r\n  ma
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"progress\">\n  <div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" style=\"width: 10%;\" aria-valuenow=\"10\"\n       aria-valuemin=\"0\" aria-valuemax=\"100\">1\n  </div>\n</div>\n<div>\n  <div class=\"quizMain\">\n    <div>\n      <p id=\"questionLabel\"></p>\n\n      <div class=\"list-group\">\n        <a href=\"#\" class=\"list-group-item list-group-item-action\" id=\"answer1\">Answer1</a>\n        <a href=\"#\" class=\"list-group-item list-group-item-action\" id=\"answer2\">Answer2</a>\n        <a href=\"#\" class=\"list-group-item list-group-item-action\" id=\"answer3\">Answer3</a>\n        <a href=\"#\" class=\"list-group-item list-group-item-action\" id=\"answer4\">Answer4</a>\n      </div>\n    </div>\n  </div>\n  <div class=\"quizSummary\">\n    <p id=\"score\"></p>\n    <p id=\"meanScore\"></p>\n    <a class=\"btn btn-primary\" href=\"quiz.html\" role=\"button\">Jeszcze raz!</a>\n  </div>\n</div>\n\n<script src=\"script.js\"></script>\n"
+module.exports = "<div class=\"progress\">\r\n  <div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" style=\"width: 10%;\" aria-valuenow=\"10\"\r\n       aria-valuemin=\"0\" aria-valuemax=\"100\">1\r\n  </div>\r\n</div>\r\n<div>\r\n  <div class=\"quizMain\">\r\n    <div>\r\n      <p id=\"questionLabel\"></p>\r\n\r\n      <div class=\"list-group\">\r\n        <a href=\"#\" class=\"list-group-item list-group-item-action\" id=\"answer1\">Answer1</a>\r\n        <a href=\"#\" class=\"list-group-item list-group-item-action\" id=\"answer2\">Answer2</a>\r\n        <a href=\"#\" class=\"list-group-item list-group-item-action\" id=\"answer3\">Answer3</a>\r\n        <a href=\"#\" class=\"list-group-item list-group-item-action\" id=\"answer4\">Answer4</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"quizSummary\">\r\n    <p id=\"score\"></p>\r\n    <p id=\"meanScore\"></p>\r\n    <a class=\"btn btn-primary\" href=\"quiz.html\" role=\"button\">Jeszcze raz!</a>\r\n  </div>\r\n</div>\r\n\r\n<script src=\"script.js\"></script>\r\n"
 
 /***/ }),
 
@@ -1000,7 +955,7 @@ module.exports = ".searchBar {\r\n  margin-top: 10px;\r\n  margin-bottom: 10px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"input-group mb-3 searchBar\">\n  <input [(ngModel)]=\"filterText\" (ngModelChange)=\"sendFilter($event)\" class=\"form-control\"\n         placeholder=\"Wpisz szukaną frazę...\" id=\"search\" type=\"search\" appTextFormat>\n</div>\n"
+module.exports = "<div class=\"input-group mb-3 searchBar\">\r\n  <input [(ngModel)]=\"filterText\" (ngModelChange)=\"sendFilter($event)\" class=\"form-control\"\r\n         placeholder=\"Wpisz szukaną frazę...\" id=\"search\" type=\"search\" appTextFormat>\r\n</div>\r\n"
 
 /***/ }),
 
