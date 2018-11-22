@@ -75,8 +75,8 @@ export class BlogComponent implements OnInit {
     this.router.navigate(['/blog/detail/', id]);
   }
 
-  setQuery() {
-      this.router.navigate(['/blog'],
-        {queryParams: {title: this.filterText }});
-  }
+  // setQuery() {
+  //     this.router.navigate(['/blog'],
+  //       {queryParams: {title: this.filterText }});
+  // }
 }
