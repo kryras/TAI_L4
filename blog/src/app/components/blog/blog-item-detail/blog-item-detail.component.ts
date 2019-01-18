@@ -20,7 +20,7 @@ export class BlogItemDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataService.get(this.postId).subscribe(result => {
+    this.dataService.get(parseInt(this.postId, 10) + 1).subscribe(result => {
       this.blogPost = result;
     });
   }

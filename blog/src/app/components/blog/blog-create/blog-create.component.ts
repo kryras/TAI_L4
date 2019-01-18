@@ -13,7 +13,6 @@ export class BlogCreateComponent implements OnInit {
   constructor(private dataService: DataService, private router: Router) { }
 
   postData = {
-    id: null,
     title: '',
     description: '',
     image: ''
@@ -26,7 +25,8 @@ export class BlogCreateComponent implements OnInit {
     console.log("Utworzenie postu", this.postData);
     this.dataService.createPost(this.postData).subscribe(response  => {
       let postObj:any = response;
-      this.router.navigate(['/blog/detail/', postObj.id]);
+      console.log(response);
+      // this.router.navigate(['/blog/detail/', postObj.id]);
     }, error => {
       console.log(error);
     });
